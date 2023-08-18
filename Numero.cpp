@@ -3,17 +3,60 @@
 #include <iostream>
 using namespace std;
 
-Numero::Numero() { cdigitos = NULL; }
+Numero::Numero() {  }
 
-Numero::Numero(char digits[2]) {
+Numero::Numero(string digits) {
 	cdigitos = digits;
+}
+
+Numero::Numero(int numasign) {
+	numero = numasign;
+}
+
+Numero::~Numero() {
 }
 
 vector<Numero*> Numero::procesarCadena() {
 	vector<Numero*> vnumero;
-	for (size_t i = 0; i < 2; i++){
-
+	for (size_t i = 0; i < cdigitos.size(); i++){
+		cout << i;
+		Numero* a;
+		a = new Numero((int)cdigitos[i] - 48);
+		a->asignarLetras(a->getAssNumero());
+		vnumero.push_back(a);
 	}
 	
+	return vnumero;
+}
+void Numero::asignarLetras(int digito) {
+	assletras = letras[digito];
+}
+
+int Numero::getAssNumero() {
+	return numero;
+}
+
+void Numero::obtenerSecuencias(vector<Numero*> v) {
+	Numero* obj1 = v[0];
+	Numero* obj2 = v[1];
+
+	string ob1letters = obj1->getAssLetras();
+	string ob2letters = obj2->getAssLetras();
+	for (int i = 0; i < ob1letters.size(); i++){
+		char temp = ob1letters[i];
+		for (size_t j = 0;  j < ob2letters.size();  j++){
+			cout << temp << ob2letters[j] << " ";
+		}
+	}
+
+	
+}
+
+void Numero::general() {
 
 }
+
+string Numero::getAssLetras() {
+	return assletras;
+}
+
