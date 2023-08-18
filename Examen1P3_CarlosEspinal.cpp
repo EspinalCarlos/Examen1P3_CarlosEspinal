@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Numero.h";
+#include "Rectangulo.h"
 using namespace std;
 
 void menu() {
@@ -27,13 +28,7 @@ int main(){
                 n.general();
                     break;
             case 2:
-                cout << "Ingrese el size del arreglo: ";
-                cin >> arrsize;
-                int* arr = new int[arrsize];
-                for (size_t i = 0; i < arrsize; i++){
-                    cin >> ingresado2;
-                    arr[i] = ingresado2;
-                }
+                Rectangulo();
 
                     break;
 
