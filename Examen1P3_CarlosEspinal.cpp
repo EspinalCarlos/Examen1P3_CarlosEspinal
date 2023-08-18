@@ -12,14 +12,30 @@ int main(){
     do {
         menu();
         cin >> opcion;
+        
         string sdigitos;
+        Numero n;
+        int arrsize, ingresado2;
         switch (opcion) {
             case 1:
-                cout << "Ingrese una cadena de dos numeros: ";
-                cin.ignore();
-                getline(cin, sdigitos);
-                Numero n = Numero(sdigitos);
-                n.procesarCadena();
+                
+                    cout << "Ingrese una cadena de dos numeros: ";
+                    cin.ignore();
+                    getline(cin, sdigitos);
+             
+                n = Numero(sdigitos);
+                n.general();
+                    break;
+            case 2:
+                cout << "Ingrese el size del arreglo: ";
+                cin >> arrsize;
+                int* arr = new int[arrsize];
+                for (size_t i = 0; i < arrsize; i++){
+                    cin >> ingresado2;
+                    arr[i] = ingresado2;
+                }
+
+                    break;
 
 
 

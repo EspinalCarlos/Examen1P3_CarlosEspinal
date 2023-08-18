@@ -19,11 +19,12 @@ Numero::~Numero() {
 vector<Numero*> Numero::procesarCadena() {
 	vector<Numero*> vnumero;
 	for (size_t i = 0; i < cdigitos.size(); i++){
-		cout << i;
 		Numero* a;
-		a = new Numero((int)cdigitos[i] - 48);
+
+		a = new Numero((int)cdigitos[i] - 48-2);
 		a->asignarLetras(a->getAssNumero());
 		vnumero.push_back(a);
+		
 	}
 	
 	return vnumero;
@@ -48,12 +49,16 @@ void Numero::obtenerSecuencias(vector<Numero*> v) {
 			cout << temp << ob2letters[j] << " ";
 		}
 	}
+	delete obj1;
+	delete obj2;
 
 	
 }
 
 void Numero::general() {
-
+	vector<Numero*> pc = procesarCadena();
+	obtenerSecuencias(pc);
+	cout << "\n";
 }
 
 string Numero::getAssLetras() {

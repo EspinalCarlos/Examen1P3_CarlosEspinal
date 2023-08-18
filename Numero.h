@@ -8,7 +8,8 @@ using namespace std;
 class Numero{
 	string cdigitos;
 	int numero;
-	char letras[26] = { 'a','b', 'c' ,'d', 'e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z' };
+	string letras[8] = { "abc", "def","ghi","jkl","mno","pqrs","tuv","wxyz" };
+	string assletras;
 
 public:
 	Numero();
@@ -18,6 +19,9 @@ public:
 	void asignarLetras(int digito);
 	char* getLetras();
 	void obtenerSecuencias(vector<Numero*> numeros);
+	void general();
+	int getAssNumero();
+	string getAssLetras();
 	~Numero();
 };
 
